@@ -18,7 +18,6 @@
     <br />
     <br />
 
-
     <table border="1" width="80%">
         <thead>
             <tr>
@@ -27,23 +26,24 @@
                 <th>Modelo</th>
                 <th>Año</th>
                 <th>Color</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
             <?php
             foreach ($data["vehiculos"] as $dato) {
                 # code...
-
                 echo "<tr>";
                 echo "<td>".$dato["placa"]."</td>";
                 echo "<td>".$dato["marca"]."</td>";
                 echo "<td>".$dato["modelo"]."</td>";
                 echo "<td>".$dato["anio"]."</td>";
                 echo "<td>".$dato["color"]."</td>";
+                echo "<td><a href='index.php?c=vehiculos&a=modificar&id=".$dato["id"]."'>Modificar</a></td>";
+                echo "<td><a href='index.php?c=vehiculos&a=eliminar&id=".$dato["id"]."'>Eliminar</a></td>";
                 echo "</tr>";
-
             }
-            
             ?>
 
         </tbody>
